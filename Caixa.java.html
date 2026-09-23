@@ -1,0 +1,81 @@
+<html>
+<head>
+<title>Caixa.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #6aab73;}
+.s4 { color: #2aacb8;}
+.s5 { color: #7a7e85;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Caixa.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">app</span><span class="s2">;</span>
+
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">Locale</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">Scanner</span><span class="s2">;</span>
+
+<span class="s0">public class </span><span class="s1">Caixa </span><span class="s2">{</span>
+    <span class="s0">public static void </span><span class="s1">main</span><span class="s2">(</span><span class="s1">String</span><span class="s2">[] </span><span class="s1">args</span><span class="s2">) {</span>
+        <span class="s1">Scanner sc </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Scanner</span><span class="s2">(</span><span class="s1">System</span><span class="s2">.</span><span class="s1">in</span><span class="s2">).</span><span class="s1">useLocale</span><span class="s2">(</span><span class="s1">Locale</span><span class="s2">.</span><span class="s1">US</span><span class="s2">);</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;SISTEMA DE VENDAS - CAIXA ABERTO&quot;</span><span class="s2">);</span>
+
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s3">&quot;Deseja abrir o caixa para vendas (s/n): &quot;</span><span class="s2">);</span>
+        <span class="s0">char </span><span class="s1">abrirCaixa </span><span class="s2">= </span><span class="s1">sc</span><span class="s2">.</span><span class="s1">next</span><span class="s2">().</span><span class="s1">toUpperCase</span><span class="s2">().</span><span class="s1">charAt</span><span class="s2">(</span><span class="s4">0</span><span class="s2">);</span>
+        <span class="s0">int </span><span class="s1">numeroVenda </span><span class="s2">= </span><span class="s4">0</span><span class="s2">;</span>
+
+        <span class="s0">while </span><span class="s2">(</span><span class="s1">abrirCaixa </span><span class="s2">== </span><span class="s3">'S'</span><span class="s2">) {</span>
+            <span class="s1">numeroVenda</span><span class="s2">++;</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;</span><span class="s0">\n</span><span class="s3">--- Venda número: &quot; </span><span class="s2">+ </span><span class="s1">numeroVenda </span><span class="s2">+ </span><span class="s3">&quot; ---&quot;</span><span class="s2">);</span>
+
+            <span class="s0">double </span><span class="s1">totalVenda </span><span class="s2">= </span><span class="s4">0.0</span><span class="s2">;</span>
+            <span class="s0">char </span><span class="s1">maisItens</span><span class="s2">;</span>
+
+            <span class="s5">// Loop para somar os itens da venda atual</span>
+            <span class="s0">do </span><span class="s2">{</span>
+                <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s3">&quot;Valor do item: &quot;</span><span class="s2">);</span>
+                <span class="s0">double </span><span class="s1">valorItem </span><span class="s2">= </span><span class="s1">sc</span><span class="s2">.</span><span class="s1">nextDouble</span><span class="s2">();</span>
+
+                <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s3">&quot;Quantidade do item: &quot;</span><span class="s2">);</span>
+                <span class="s0">double </span><span class="s1">qtde </span><span class="s2">= </span><span class="s1">sc</span><span class="s2">.</span><span class="s1">nextDouble</span><span class="s2">();</span>
+
+                <span class="s0">double </span><span class="s1">subTotalItem </span><span class="s2">= </span><span class="s1">valorItem </span><span class="s2">* </span><span class="s1">qtde</span><span class="s2">;</span>
+                <span class="s1">totalVenda </span><span class="s2">+= </span><span class="s1">subTotalItem</span><span class="s2">; </span><span class="s5">// Acumula o valor total da compra</span>
+
+                <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;Subtotal acumulado: &quot; </span><span class="s2">+ </span><span class="s1">totalVenda</span><span class="s2">);</span>
+
+                <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s3">&quot;Incluir mais itens? (s/n): &quot;</span><span class="s2">);</span>
+                <span class="s1">maisItens </span><span class="s2">= </span><span class="s1">sc</span><span class="s2">.</span><span class="s1">next</span><span class="s2">().</span><span class="s1">toLowerCase</span><span class="s2">().</span><span class="s1">charAt</span><span class="s2">(</span><span class="s4">0</span><span class="s2">);</span>
+
+            <span class="s2">} </span><span class="s0">while </span><span class="s2">(</span><span class="s1">maisItens </span><span class="s2">== </span><span class="s3">'s'</span><span class="s2">);</span>
+
+            <span class="s5">// Pagamento (após fechar a lista de itens)</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;</span><span class="s0">\n</span><span class="s3">Total da venda: &quot; </span><span class="s2">+ </span><span class="s1">totalVenda</span><span class="s2">);</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s3">&quot;Qual o valor pago pelo cliente? &quot;</span><span class="s2">);</span>
+            <span class="s0">double </span><span class="s1">valorPago </span><span class="s2">= </span><span class="s1">sc</span><span class="s2">.</span><span class="s1">nextDouble</span><span class="s2">();</span>
+
+            <span class="s0">if </span><span class="s2">(</span><span class="s1">valorPago </span><span class="s2">&lt; </span><span class="s1">totalVenda</span><span class="s2">) {</span>
+                <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;Valor insuficiente! Faltam R$ &quot; </span><span class="s2">+ (</span><span class="s1">totalVenda </span><span class="s2">- </span><span class="s1">valorPago</span><span class="s2">));</span>
+            <span class="s2">} </span><span class="s0">else </span><span class="s2">{</span>
+                <span class="s0">double </span><span class="s1">troco </span><span class="s2">= </span><span class="s1">valorPago </span><span class="s2">- </span><span class="s1">totalVenda</span><span class="s2">;</span>
+                <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">printf</span><span class="s2">(</span><span class="s3">&quot;Troco: %.2f</span><span class="s0">\n</span><span class="s3">&quot;</span><span class="s2">, </span><span class="s1">troco</span><span class="s2">);</span>
+            <span class="s2">}</span>
+
+            <span class="s5">// Pergunta se deseja realizar uma nova venda ou fechar o caixa</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s3">&quot;</span><span class="s0">\n</span><span class="s3">Deseja realizar outra venda? (s/n): &quot;</span><span class="s2">);</span>
+            <span class="s1">abrirCaixa </span><span class="s2">= </span><span class="s1">sc</span><span class="s2">.</span><span class="s1">next</span><span class="s2">().</span><span class="s1">toUpperCase</span><span class="s2">().</span><span class="s1">charAt</span><span class="s2">(</span><span class="s4">0</span><span class="s2">);</span>
+        <span class="s2">}</span>
+
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;Caixa fechado. Até logo!&quot;</span><span class="s2">);</span>
+        <span class="s1">sc</span><span class="s2">.</span><span class="s1">close</span><span class="s2">();</span>
+    <span class="s2">}</span>
+<span class="s2">}</span></pre>
+</body>
+</html>
